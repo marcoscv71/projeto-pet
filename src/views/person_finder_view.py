@@ -12,7 +12,7 @@ class PersonFinderView(ViewInterface):
         self.__controller = controller
 
     def handle(self, http_request: HttpRequest) -> HttpResponse:
-        person_id = http_request.params.get("id")
+        person_id = http_request.param.get("id")
         body_response = self.__controller.find(person_id)
 
         return HttpResponse(status_code=200, body=body_response)
